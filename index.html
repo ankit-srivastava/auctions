@@ -7,87 +7,267 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="css/base.css" />
 	<link rel="stylesheet" type="text/css" href="css/standings.css" />	
+  <script type="text/javascript" src="js/iscroll.js" /></script>
+  <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
 </head>
+
+<script  type="text/javascript">
+  if(navigator.userAgent.match(/Windows Phone/i))
+  {
+    $(document).ready(function() {    
+    $("body").niceScroll();
+    $("#wrapper").niceScroll({touchbehavior : true, bouncescroll : true, cursoropacitymin : 1 });
+    });
+
+  }else{
+    var myScroll;
+    function loaded() {
+                  myScroll = new iScroll('wrapper', { 
+                       shrinkScrollbar : false,
+                       fadeScrollbar : true,
+                       hideScrollbar:true
+                    });
+                 console.log(myScroll);
+      }
+      document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+      /* * * * * * * *
+       *
+       * Use this for high compatibility (iDevice + Android)
+       *
+       */
+      document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+      /*
+       * * * * * * * */
+
+
+      /* * * * * * * *
+       *
+       * Use this for iDevice only
+       *
+       */
+      //document.addEventListener('DOMContentLoaded', loaded, false);
+      /*
+       * * * * * * * */
+
+
+      /* * * * * * * *
+       *
+       * Use this if nothing else works
+       *
+       */
+      //window.addEventListener('load', setTimeout(function () { loaded(); }, 200), false);
+      /*
+       * * * * * * * */
+   }    
+</script>
+
 <body>
 <div class="bl-bg">
 	<div class="container">
-		<h1>Indian Premier League
+		  <h1>Indian Premier League
 
 </h1>
 		<h2>Season 6 (2013)</h2>
 		<hr class='indent' />
-		<div class="graphicarrow">
-			<div class="arrow-up"></div>
-			<div class="arrow-up-a"></div>
-			<div class="arrow-up-b"></div>
-		</div>
+  		<div class="graphicarrow">
+  			<div class="arrow-up"></div>
+  			<div class="arrow-up-a"></div>
+  			<div class="arrow-up-b"></div>
+  		</div>
 	  <h3 >&nbsp;</h3>
-<table class='standing'>
-  <thead>
-    <tr>
-      <th width="5%">
-      <div class="arrowdown"></div>
-      </th>
-      <th width="70%">PLAYER </th>
-      <th width="50%">TEAM </th>
-      <th width="30%">PRICE</th>
-      </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Shane Watson </td>
-      <td>CSK</td>
-      <td>$1,000,000</td>
-      </tr>
-    <tr>
-      <td colspan="4">
-      <div class="player-his">
-      <div class="player-image"><img src="img/shane-watson.jpg" width="80" height="88"></div>
-      <div class="player-name">Inn:<br>
-        Runs:<br>
-        Avg:</div>
-        <div class="inn-number">21<br>
-        1140<br>
-        20.0</div>
-              <div class="player-name">S/R:<br>
-                HS:<br>
-            30S:</div>
-              <div class="inn-number">110.3<br>
-                67<br>
-        8</div>
-              
-            <div class="count-name"> Australia</div>
+   
+   <style>
 
-      </div>
-      </td>
-      </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>B.McCullum </td>
-      <td>KKR</td>
-      <td>$1,000,000</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td> Like Wright </td>
-      <td class='a-left'>RCB</td>
-      <td>$1,000,000</td>
-      </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Virat Kohli </td>
-      <td class='a-left'>DD<br></td>
-      <td>$1,000,000</td>
-      </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td> M.Jayawardene</td>
-      <td class='a-left'>PT</td>
-      <td>$1,000,000</td>
-      </tr>
-  </tbody>
-</table>
+      .swipe {
+      overflow: hidden;
+      /*visibility: hidden;*/
+      position: relative;
+    }
+    .swipe-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+    .swipe-wrap > div {
+      float:left;
+      width:100%;
+      position: relative;
+    }
+*/
+   </style>
+    
+         <div id='slider' class='swipe'>
+         <div class='swipe-wrap'> 
+          <div>
+            <table class='standing'>
+              <thead>
+                <tr>
+                  <th width="5%">
+                  <div class="arrowdown"></div>
+                  </th>
+                  <th width="70%">PLAYER </th>
+                  <th width="50%">TEAM </th>
+                  <th width="30%">PRICE</th>
+                  </tr>
+              </thead>
+
+              <div id="wrapper">
+                 <div id="scroller">  
+                  <tbody>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>Shane Watson </td>
+                      <td>CSK</td>
+                      <td>$1,000,000</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">
+                          <div class="player-his">
+                          <div class="player-image"><img src="img/shane-watson.jpg" width="80" height="88"></div>
+                          <div class="player-name">Inn:<br>
+                            Runs:<br>
+                            Avg:</div>
+                            <div class="inn-number">21<br>
+                            1140<br>
+                            20.0</div>
+                                  <div class="player-name">S/R:<br>
+                                    HS:<br>
+                                30S:</div>
+                                  <div class="inn-number">110.3<br>
+                                    67<br>
+                            8</div>
+                                  
+                                <div class="count-name"> Australia</div>
+                          </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>B.McCullum </td>
+                      <td>KKR</td>
+                      <td>$1,000,000</td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td> Like Wright </td>
+                      <td class='a-left'>RCB</td>
+                      <td>$1,000,000</td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>Virat Kohli </td>
+                      <td class='a-left'>DD<br></td>
+                      <td>$1,000,000</td>
+                      </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td> M.Jayawardene</td>
+                      <td class='a-left'>PT</td>
+                      <td>$1,000,000</td>
+                    </tr>
+                  </tbody>
+            </div>
+          </div>
+            </table>
+           </div> 
+          
+           <div>
+              <table class='standing'>
+                  <thead>
+                    <tr>
+                      <th width="5%"></th>
+                      <th width="70%">TEAM</th>
+                      <th width="20%">&nbsp;</th>
+                      <th width="30%">SPEND</th>
+                      </tr>
+                  </thead>
+                      <tbody>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>Bangalore Royal Challengers </td>
+                          <td>&nbsp;</td>
+                          <td>$1,000,000</td>
+                        </tr>
+                        <tr>
+                          <td colspan="4">
+                          <div class="player-his">
+                          <div class="player-spend">C.Gayle (2009-Present) </div>
+                          <div class="player-name">$1,000,000</div>
+                          <div class="player-spend">V.Kohli (2010-Present)  </div>
+                          <div class="player-name">$950,000</div>
+                          <div class="player-spend">P.Kumar (2013-Present) </div>
+                          <div class="player-name">$800,000 </div>
+                          <div class="player-spend">D.Mohan (2011-present)</div>
+                          <div class="player-name"> $150,000 </div>
+                          </div>
+                               <br> 
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>Chennai Super Kings </td>
+                          <td>&nbsp;</td>
+                          <td>$1,000,000</td>
+                          </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td> Delhi Daredevils </td>
+                          <td class='a-left'>&nbsp;</td>
+                          <td>$1,000,000</td>
+                          </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>Kings XI Punjab </td>
+                          <td class='a-left'><br></td>
+                          <td>$1,000,000</td>
+                          </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>Kolkata Knight Riders</td>
+                          <td class='a-left'>&nbsp;</td>
+                          <td>$1,000,000</td>
+                          </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>Mumbai Indians</td>
+                          <td class='a-left'>&nbsp;</td>
+                          <td>$1,000,000</td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>Pune Warriors India</td>
+                          <td class='a-left'>&nbsp;</td>
+                          <td>$1,000,000</td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>Rajasthan Royals</td>
+                          <td class='a-left'>&nbsp;</td>
+                          <td>$1,000,000</td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>Sunrisers Hyderabad</td>
+                          <td class='a-left'>&nbsp;</td>
+                          <td>$1,000,000</td>
+                        </tr>
+                      </tbody>
+            </table>
+           </div>
+         </div>
+        </div>   
+      
+<a href='#' onclick='slider.prev();return false;'>prev</a> 
+<a href='#' onclick='slider.next();return false;'>next</a>
+<br><br>
+
+ <script src="js/jquery-1.7.1.min.js"></script>
+<script src='js/swipe.js'></script>
+<script>
+
+var slider = new Swipe(document.getElementById('slider'));
+
+  </script> 
 <div class="logofooter"></div>
 </div>
 </body>
