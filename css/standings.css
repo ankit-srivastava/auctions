@@ -151,9 +151,22 @@ table.standing{
 .player-name{
 	width:10%;
 	float:left;
+	margin:8px 18px 0 2px;
+	color:#999999;
+	line-height:20px;
+}
+.strike-rate-text{
+	float:right;
 	margin:8px 7px 0 15px;
 	color:#999999;
 	line-height:20px;
+}
+.strike-rate-num{
+	width:15%;
+	float:right;
+	color:#999999;
+	line-height:20px;
+	margin:8px 0 0 0;
 
 }
 .inn-number{
@@ -164,6 +177,7 @@ table.standing{
 	margin:8px 0 0 0;
 
 }
+
 .count-name{
     color: #FF4653;
     float: left;
@@ -197,5 +211,8 @@ content: "";
 	color: #999999;
 	line-height: 20px;
 	margin: 8px 0px 0 10px;
-
+}
+.run-rate-div{
+	width:65%;
+	float:right;
 }
