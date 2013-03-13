@@ -13,8 +13,16 @@
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
   <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
-   <script src="js/jquery-1.7.1.min.js"></script>
+  <script src='js/jquery-1.7.1.min.js'></script>
   <script src='js/swipe.js'></script>
+  <script src='js/accordion.js'></script>
+  <script src='http://jquery.bassistance.de/accordion/lib/jquery.easing.js'></script>
+  <script src='http://jquery.bassistance.de/accordion/lib/jquery.dimensions.js'></script>
+  <script src='http://jquery.bassistance.de/accordion/lib/chili-1.7.pack.js'></script>
+  
+
+  
+  
   <script>
     // $(function() {
     //   $( "#accordion" ).accordion();
@@ -97,15 +105,15 @@
                   </tr>
                 </thead> -->
                 <tbody>
-                  <tr >
+                  <tr class="title">
                     <td width="5%">&nbsp;</td>
                     <td width="70%">Shane Watson </td>
                     <td width="50%">CSK</td>
                     <td width="30%">$1,000,000</td>
                   </tr>
-                  <div>
-                    <tr>
-                      <td colspan="4">
+                  <div style="display:none;">
+                    <tr  colspan="4"  width="100%">
+                      <td colspan="4" width="100%">
                         <div class="player-his">
                           <div class="player-image"><img src="img/shane-watson.jpg" width="80" height="88">
                           </div>
@@ -450,11 +458,26 @@ console.log("acc loaded");
         startSlide: 0,
         speed: 400,
         callback: function(index, elem) {
-          
+
         },
         transitionEnd: function(index, elem) {}
       });
       console.log(window.mySwipe);
+
+      $('#wrapper-0').accordion({ 
+          change: function(event, ui) { 
+            console.log(event);
+            if (event.newContent.css("display") == "block") {
+              event.newContent.css("display", "table-row");
+            }
+          },  
+          header: 'tr.title', 
+          active: false, 
+          alwaysOpen: false, 
+          navigation: true, 
+          animated: 'bounceslide'
+          
+      });
 
       if(navigator.userAgent.match(/Windows Phone/i))
       {  
