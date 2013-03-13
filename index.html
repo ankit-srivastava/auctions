@@ -58,20 +58,22 @@
 <body>
 <div class="bl-bg">
 	<div class="container">
-	  <h1>Indian Premier League
-    </h1>
-		<h2>Season 6 (2013)</h2>
-		<hr class='indent' />
-		<div class="graphicarrow">
-			<div class="arrow-up"></div>
-			<div class="arrow-up-a"></div>
-			<div class="arrow-up-b"></div>
-		</div>
-	  <h3 >&nbsp;</h3>
+    <div id="top">
+  	  <h1>Indian Premier League
+      </h1>
+  		<h2>Season 6 (2013)</h2>
+  		<hr class='indent' />
+  		<div class="graphicarrow">
+  			<div class="arrow-up"></div>
+  			<div class="arrow-up-a"></div>
+  			<div class="arrow-up-b"></div>
+  		</div>
+  	  <h3 >&nbsp;</h3>
+    </div>
     <div id='slider' class='swipe'>
       <div class='swipe-wrap' > 
         <div>
-          <table class='standing'>
+          <table class='standing' id="standing">
             <thead>
               <tr>
                 <th width="5%">
@@ -455,6 +457,14 @@ console.log("acc loaded");
         transitionEnd: function(index, elem) {}
       });
       console.log(window.mySwipe);
+
+      // var height = $(window).height()- $("#top").height()- $("#standing").height() - 107;
+      // $("#wrapper-0").css("height",height); 
+      // console.log($("#slider").height());
+      // console.log($("#standing").height());
+      // console.log($("#top").height());
+      // console.log($(window).height());
+
 
       if(navigator.userAgent.match(/Windows Phone/i))
       {  
