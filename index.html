@@ -38,7 +38,14 @@
       width:100%;
       position: relative;
     }
-    #wrapper {
+    #wrapper-0 {
+      position:relative;
+      z-index:1;
+      width:100%;
+      height:400px;
+      overflow:auto;
+    }
+    #wrapper-1 {
       position:relative;
       z-index:1;
       width:100%;
@@ -76,8 +83,8 @@
               </tr>
             </thead>
           </table>
-          <div id="wrapper">
-            <div id="scroller">
+          <div id="wrapper-0">
+            <div id="scroller-0">
               <table class='standing'>
                <!--  <thead>
                   <tr>
@@ -280,95 +287,102 @@
           </div>
         </div> 
         <div>
-          <table class='standing'>
-            <thead>
-              <tr>
-                <th width="5%"></th>
-                <th width="70%">TEAM</th>
-                <th width="20%">&nbsp;</th>
-                <th width="30%">SPEND</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>&nbsp;</td>
-                <td>Bangalore Royal Challengers </td>
-                <td>&nbsp;</td>
-                <td>$1,000,000</td>
-              </tr>
-              <tr>
-                <td colspan="4">
-                  <div class="player-his">
-                    <div class="player-spend">C.Gayle (2009-Present) 
-                    </div>
-                    <div class="player-name">$1,000,000
-                    </div>
-                    <div class="player-spend">V.Kohli (2010-Present)  
-                    </div>
-                    <div class="player-name">$950,000
-                    </div>
-                    <div class="player-spend">P.Kumar (2013-Present) 
-                    </div>
-                    <div class="player-name">$800,000 
-                    </div>
-                    <div class="player-spend">D.Mohan (2011-present)
-                    </div>
-                    <div class="player-name"> $150,000 
-                    </div>
-                  </div>
-                  <br> 
-                </td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>Chennai Super Kings </td>
-                <td>&nbsp;</td>
-                <td>$1,000,000</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td> Delhi Daredevils </td>
-                <td class='a-left'>&nbsp;</td>
-                <td>$1,000,000</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>Kings XI Punjab </td>
-                <td class='a-left'><br></td>
-                <td>$1,000,000</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>Kolkata Knight Riders</td>
-                <td class='a-left'>&nbsp;</td>
-                <td>$1,000,000</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>Mumbai Indians</td>
-                <td class='a-left'>&nbsp;</td>
-                <td>$1,000,000</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>Pune Warriors India</td>
-                <td class='a-left'>&nbsp;</td>
-                <td>$1,000,000</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>Rajasthan Royals</td>
-                <td class='a-left'>&nbsp;</td>
-                <td>$1,000,000</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>Sunrisers Hyderabad</td>
-                <td class='a-left'>&nbsp;</td>
-                <td>$1,000,000</td>
-              </tr>
-            </tbody>
-          </table>
+        <table class='standing'>
+          <thead>
+            <tr>
+              <th width="5%"></th>
+              <th width="70%">TEAM</th>
+              <th width="20%">&nbsp;</th>
+              <th width="30%">SPEND</th>
+            </tr>
+          </thead>
+        </table>
+        
+        <div id="wrapper-1">
+          <div id="scroller-1">
+            <table class='standing'>
+              <tbody>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>Bangalore Royal Challengers </td>
+                    <td>&nbsp;</td>
+                    <td>$1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">
+                      <div class="player-his">
+                        <div class="player-spend">C.Gayle (2009-Present) 
+                        </div>
+                        <div class="player-name">$1,000,000
+                        </div>
+                        <div class="player-spend">V.Kohli (2010-Present)  
+                        </div>
+                        <div class="player-name">$950,000
+                        </div>
+                        <div class="player-spend">P.Kumar (2013-Present) 
+                        </div>
+                        <div class="player-name">$800,000 
+                        </div>
+                        <div class="player-spend">D.Mohan (2011-present)
+                        </div>
+                        <div class="player-name"> $150,000 
+                        </div>
+                      </div>
+                      <br> 
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>Chennai Super Kings </td>
+                    <td>&nbsp;</td>
+                    <td>$1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td> Delhi Daredevils </td>
+                    <td class='a-left'>&nbsp;</td>
+                    <td>$1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>Kings XI Punjab </td>
+                    <td class='a-left'><br></td>
+                    <td>$1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>Kolkata Knight Riders</td>
+                    <td class='a-left'>&nbsp;</td>
+                    <td>$1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>Mumbai Indians</td>
+                    <td class='a-left'>&nbsp;</td>
+                    <td>$1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>Pune Warriors India</td>
+                    <td class='a-left'>&nbsp;</td>
+                    <td>$1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>Rajasthan Royals</td>
+                    <td class='a-left'>&nbsp;</td>
+                    <td>$1,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>Sunrisers Hyderabad</td>
+                    <td class='a-left'>&nbsp;</td>
+                    <td>$1,000,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div> 
@@ -435,7 +449,9 @@ console.log("acc loaded");
       window.mySwipe = new Swipe(document.getElementById('slider'), {
         startSlide: 0,
         speed: 400,
-        callback: function(index, elem) {},
+        callback: function(index, elem) {
+          
+        },
         transitionEnd: function(index, elem) {}
       });
       console.log(window.mySwipe);
@@ -445,13 +461,16 @@ console.log("acc loaded");
         // $("body").niceScroll();
         // $("#wrapper").niceScroll({touchbehavior : true, bouncescroll : true, cursoropacitymin : 1 });
       }else{
-        // var myScroll;
+        var myScroll = {};
         function loaded() {
-                    window.myScroll = new iScroll('wrapper', { 
+                    myScroll[0] = new iScroll('wrapper-0', { 
                          desktopCompatibility:true,
                          checkDOMChanges: true
                       });
-                    window.myScroll.scrollTo(0,0);
+                    myScroll[1] = new iScroll('wrapper-1', { 
+                         desktopCompatibility:true,
+                         checkDOMChanges: true
+                      });
                    console.log(window.myScroll);
                    // loadAccordions();
                     // $( "#accordion" ).accordion();
