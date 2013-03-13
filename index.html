@@ -23,6 +23,28 @@
 </head>
 
 <style>
+      .on {
+      color: #9D9EA0;
+      }
+      #position {
+      text-align: center;
+      font-size: 27px;
+      line-height: 1.3;
+      color: #E0E1E1;
+      display: block;
+      left: 50%;
+      margin-left: -70px;
+      width: 150px;
+      position: relative;
+      z-index: 99;
+      top: 1px;
+      }
+
+      #position em {
+      padding : 6px;  
+      position: relative;
+      top: -2px;
+      }
 
       .swipe {
       overflow: hidden;
@@ -286,6 +308,9 @@
             </div>
           </div>
         </div> 
+
+
+
         <div>
         <table class='standing'>
           <thead>
@@ -394,12 +419,9 @@
 <br><br>
 
 
-
-<script>
-
-
-
-  </script> 
+        <nav>
+        <span id='position'><em class='on'>&bull;</em><em>&bull;</em></span>
+      </nav>
 
   <script type="text/javascript">
       
@@ -461,13 +483,13 @@ console.log("acc loaded");
         // $("body").niceScroll();
         // $("#wrapper").niceScroll({touchbehavior : true, bouncescroll : true, cursoropacitymin : 1 });
       }else{
-        var myScroll = {};
+        window.myScroll = {};
         function loaded() {
-                    myScroll[0] = new iScroll('wrapper-0', { 
+                    window.myScroll[0] = new iScroll('wrapper-0', { 
                          desktopCompatibility:true,
                          checkDOMChanges: true
                       });
-                    myScroll[1] = new iScroll('wrapper-1', { 
+                    window.myScroll[1] = new iScroll('wrapper-1', { 
                          desktopCompatibility:true,
                          checkDOMChanges: true
                       });
@@ -475,7 +497,29 @@ console.log("acc loaded");
                    // loadAccordions();
                     // $( "#accordion" ).accordion();
                   
+        var pos;
+         bullets = document.getElementById('position').getElementsByTagName('em'); 
+        //console.log(bullets);
+        window.mySwipe = new Swipe(document.getElementById('slider'), {
+         callback: function(e, pos) {
+           
+            window.myScroll[pos].scrollTo(0,0);
+
+            var i = bullets.length;
+          
+            while (i--) {
+              bullets[i].className = ' ';
+            }
+            bullets[pos].className = 'on';
+          }
+        }); 
+
+
+
         }
+       
+
+
         document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 
         /* * * * * * * *
